@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Recovery Science</title>
+<meta name="description" content="Research-driven programs for recovery residences and treatment programs. Based in New York, working anywhere.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Permanent+Marker&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<style>
+:root{
+  --paper:#FFD9E2; --ink:#0D3B2E; --ink-soft:#2E5A4C; --paper-hi:#FFEFF3;
+  --display:"Archivo", "Arial Narrow", Arial, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --marker:"Permanent Marker","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.2rem;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+::selection{background:var(--ink);color:var(--paper)}
+.wrap{max-width:1240px;margin:0 auto}
+a{color:var(--ink)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--display);font-stretch:125%;font-weight:900;line-height:.92;letter-spacing:-.02em;text-wrap:balance}
+
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-block:22px 0}
+.mark{text-decoration:none;display:inline-flex;align-items:center}
+.mark .stack{display:flex;flex-direction:column}
+.mark .marker{font-family:var(--marker);font-size:1.7rem;line-height:1}
+.mark svg{width:220px;height:auto}
+.mark svg .s{fill:none;stroke:#0D3B2E;stroke-linecap:round;stroke-linejoin:round}
+.top a.say{font-family:var(--display);font-weight:700;font-size:1rem;text-underline-offset:4px;text-decoration-thickness:2px}
+
+.hero{padding-block:clamp(40px,6vw,88px) clamp(32px,4vw,56px)}
+.hero h1{font-size:clamp(1.9rem,4.4vw,3.9rem);line-height:1;max-width:18em;text-transform:uppercase}
+.knock{background:var(--ink);color:var(--paper);box-decoration-break:clone;-webkit-box-decoration-break:clone;
+  font-family:var(--marker);font-weight:400;font-stretch:100%;text-transform:none;letter-spacing:.01em;padding:0 .18em;display:inline-block;transform:rotate(-1.5deg)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;margin-top:clamp(28px,3.5vw,48px);align-items:end}
+.hero-foot .tag{font-family:var(--display);font-stretch:62%;font-weight:800;font-size:clamp(1.1rem,1.6vw,1.35rem);text-transform:uppercase;line-height:1.05;letter-spacing:.01em}
+.hero-foot p.lede{font-size:clamp(1.1rem,1.4vw,1.25rem);max-width:30em}
+
+.rule{height:6px;background:var(--ink);border:0;margin:0}
+.thin{height:3px;background:var(--ink);border:0;margin:0}
+
+.what{padding-block:56px 24px}
+.what > h2,.how h2,.team-h{font-family:var(--marker);font-weight:400;font-stretch:100%;text-transform:none;letter-spacing:0;font-size:clamp(1.9rem,3.6vw,3rem)}
+.svc{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;padding-block:26px;border-top:3px solid var(--ink);align-items:baseline}
+.svc:first-of-type{margin-top:36px}
+.svc h3{font-size:clamp(1.3rem,2.2vw,1.9rem);font-stretch:85%;text-transform:uppercase}
+.svc p{max-width:30em}
+
+.ink{background:var(--ink);color:var(--paper);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));
+  padding:clamp(48px,8vw,110px) max(16px,env(safe-area-inset-right,0px)) clamp(48px,8vw,110px) max(16px,env(safe-area-inset-left,0px))}
+.ink .wrap{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:48px;align-items:end}
+.ink blockquote{margin:0;font-style:italic;font-size:clamp(1.4rem,2.4vw,2.1rem);line-height:1.18;letter-spacing:-.01em;text-wrap:balance}
+.ink .side{font-size:1.05rem;color:var(--paper-hi)}
+.ink .side strong{font-family:var(--marker);font-weight:400;font-size:1.25rem;display:block;margin-bottom:8px;color:var(--paper)}
+
+.how{padding-block:64px}
+.how ol{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.how li{padding:22px 24px 26px 0;border-top:3px solid var(--ink);min-width:0}
+.how li + li{padding-left:24px;border-left:3px solid var(--ink)}
+.how .n{font-family:var(--marker);font-size:2.6rem;line-height:1}
+.how h3{font-size:1.5rem;font-stretch:100%;text-transform:uppercase;margin-top:10px}
+.how p{margin-top:10px;font-size:1.05rem}
+.for{margin-top:48px;font-size:clamp(1.25rem,2.1vw,1.7rem);line-height:1.35;max-width:38em}
+.for b{font-family:var(--display);font-weight:800}
+.ny-intro{margin-top:16px;max-width:38em;font-size:clamp(1.1rem,1.5vw,1.3rem)}
+.ny-note{margin-top:20px;font-size:.92rem;color:var(--ink-soft)}
+
+.team{padding-block:64px}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:56px;padding-block:36px;align-items:start;border-top:3px solid var(--ink);margin-top:28px}
+.about .pname{font-size:clamp(1.8rem,3.4vw,3rem);text-transform:uppercase}
+.about .sub{font-family:var(--display);font-stretch:62%;font-weight:800;text-transform:uppercase;font-size:1.3rem;margin-top:16px;letter-spacing:.02em}
+.about .txt{display:flex;flex-direction:column;gap:18px;max-width:34em}
+.about .creds{font-size:1rem;color:var(--ink-soft);border-top:3px solid var(--ink);padding-top:14px}
+
+.contact{padding-block:56px 40px}
+.contact .ask{font-family:var(--marker);font-size:1.6rem}
+.contact .addr{display:block;margin-top:14px;font-family:var(--display);font-stretch:85%;font-weight:900;font-size:clamp(1.4rem,3.6vw,3rem);line-height:1;letter-spacing:-.02em;overflow-wrap:anywhere}
+.contact .row{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.contact button{font:inherit;font-family:var(--display);font-weight:700;font-size:1rem;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer}
+.contact p{max-width:34em}
+
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:18px 36px;font-family:var(--display);font-stretch:62%;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.95rem}
+
+@media (max-width:860px){
+  .hero-foot,.svc,.ink .wrap,.about{grid-template-columns:1fr;gap:16px}
+  .how ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .how li:nth-child(3){padding-left:0;border-left:0}
+  .about{gap:28px}
+}
+@media (max-width:520px){
+  .how ol{grid-template-columns:1fr}
+  .how li + li{padding-left:0;border-left:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mark" href="#top" id="top" aria-label="Recovery Science"><div class="stack">
+      <span class="marker">Recovery Science</span>
+      <svg viewBox="0 0 224 26" aria-hidden="true"><path class="s" stroke-width="2.6" d="M3.1 20.8 C9.4 20.9 27.8 21.4 40.6 21.4 C53.4 21.4 68.4 21.2 80.0 20.9 C91.6 20.6 103.5 21.7 110.4 19.7 C117.2 17.7 120.0 11.8 121.0 8.9 C122.1 5.9 119.2 2.5 116.8 1.8 C114.4 1.2 108.1 2.2 106.6 4.8 C105.1 7.4 105.1 14.5 107.9 17.5 C110.7 20.6 112.8 22.7 123.3 23.1 C133.9 23.5 155.0 20.7 171.0 19.9 C186.9 19.0 210.9 18.4 218.9 18.1"/></svg>
+    </div></a>
+    <a class="say" href="#contact">Get in touch</a>
+  </div>
+
+  <header class="hero">
+    <h1>Help people find your program, get better, and <span class="knock">stay connected</span> as their lives move forward.</h1>
+    <div class="hero-foot">
+      <p class="lede">We build clinical and nonclinical offerings for recovery residences and treatment programs that strengthen peer support, case management and outcomes, and we write the grants that pay for them. Better outcomes help residents, and they help the house too: stronger certification reviews, more referrals and steadier revenue. It's a return on investment you can show owners and investors.</p>
+      <p class="tag">Research-driven programs for recovery residences. Based in New York, working anywhere.</p>
+    </div>
+  </header>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+  <section class="what" aria-labelledby="what-h">
+    <h2 id="what-h">What we do</h2>
+    <div class="svc"><h3>Program design</h3><p>Daily structure, house expectations, peer roles and resident supports, built from recovery research and from what residents say they need. Welcoming, person-centered, and ready for people with co-occurring mental health needs.</p></div>
+    <div class="svc"><h3>Listening to people</h3><p>Interviews and focus groups with residents, families, staff and referral partners. The kind of fieldwork Josh has done for more than a decade.</p></div>
+    <div class="svc"><h3>Referral networks</h3><p>Mapping and strengthening ties in both directions: with the treatment programs, hospitals, courts, harm reduction services and recovery centers that send people your way, and with the jobs, schools, housing and care they move on to.</p></div>
+    <div class="svc"><h3>Knowing what works</h3><p>Light, sustainable tracking of individual and program-level outcomes, during someone's stay and through each next step, with reports your staff can act on and funders and regulators expect to see.</p></div>
+    <div class="svc"><h3>Grant writing</h3><p>Finding and writing applications for public, opioid settlement and foundation funding, including through nonprofit partners. Written by someone who has drafted federal NIH applications, with the evidence ready to back them up.</p></div>
+    <div class="svc"><h3>Getting started</h3><p>Planning, positioning and partnerships for operators opening a new residence or adding services.</p></div>
+  </section>
+</div>
+
+<div class="ink">
+  <div class="wrap">
+    <blockquote>Two programs can follow the same rules and get very different results. The difference usually lives in how the place is run.</blockquote>
+    <p class="side"><strong>Why research</strong>Josh's research studies how organizations and policy shape who gets addiction and mental health care. Stella has built and run healthcare services. Recovery Science brings the two together for programs.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="what" aria-labelledby="ny-h">
+    <h2 id="ny-h">Built for New York</h2>
+    <p class="ny-intro">New York State's addiction services agency has set out its priorities through 2029 in its <a href="https://oasas.ny.gov/agency-strategic-plan" target="_blank" rel="noopener">2025–2029 Strategic Plan</a>. Our work helps programs meet them.</p>
+    <div class="svc"><h3>Services people want and use</h3><p>The plan asks for services that are desired, valued and utilized. We find out what residents and families actually want, and build it in.</p></div>
+    <div class="svc"><h3>Measured outcomes</h3><p>The state is moving toward individual and program-level outcomes across the continuum. We help programs set up measures now, before they're required.</p></div>
+    <div class="svc"><h3>Co-occurring needs</h3><p>With a new Co-Occurring Capable designation on the way, we help programs screen for and support mental health needs like depression and ADHD.</p></div>
+    <div class="svc"><h3>Young adults</h3><p>The state is opening youth clubhouses and its first young adult recovery residence. Young adults have been the focus of Josh's research for years.</p></div>
+    <div class="svc"><h3>Housing and recovery after treatment</h3><p>The plan commits to supportive housing for people leaving residential treatment. We help residences become the next step people are referred to.</p></div>
+    <p class="ny-note">Recovery Science is independent and not affiliated with or endorsed by NYS OASAS.</p>
+  </section>
+</div>
+
+<div class="wrap"><hr class="thin"></div>
+
+<div class="wrap">
+  <section class="how" aria-labelledby="how-h">
+    <h2 id="how-h">How it goes</h2>
+    <ol>
+      <li><span class="n">1</span><h3>Listen</h3><p>Learn your program and agree on the questions that matter most.</p></li>
+      <li><span class="n">2</span><h3>Study</h3><p>Talk to people, read your records, check the research and state rules.</p></li>
+      <li><span class="n">3</span><h3>Design</h3><p>Turn findings into changes, materials and routines staff can run.</p></li>
+      <li><span class="n">4</span><h3>Check</h3><p>Track whether the changes work and report back on a set schedule.</p></li>
+    </ol>
+    <p class="for">We work with <b>recovery residences</b> and <b>sober living homes</b>, <b>operators opening a new house</b>, <b>peer-run recovery organizations</b> and the <b>investors and funders</b> who back them.</p>
+  </section>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+  <section class="team" aria-labelledby="team-h">
+    <h2 id="team-h" class="team-h">Who we are</h2>
+    <div class="about">
+      <div>
+        <h3 class="pname">Josh Aleksanyan</h3>
+        <p class="sub">Co-founder · PhD, Sociology</p>
+      </div>
+      <div class="txt">
+        <p>Josh is a sociologist who studies addiction and psychiatric services, especially for young adults, pregnant women and adults living with ADHD. He trained as an ethnographer and has spent years in treatment programs listening to the people who run them and the people who use them.</p>
+        <p>He has written federal NIH grant applications, helped design a funded National Institute on Drug Abuse research supplement, and worked with state agencies on statewide treatment data. He is currently helping build a recovery residence in New York and designing its peer-led program.</p>
+        <p>His research has appeared in <em>Social Science &amp; Medicine</em>, <em>Ethnography</em>, <em>Stigma and Health</em> and leading addiction medicine journals. Born and raised in Brooklyn; studied sociology and dance at Bard.</p>
+        <p class="creds">PhD, Columbia University · Postdoctoral Fellow, Population Health, NYU Grossman School of Medicine · BA, Bard College</p>
+      </div>
+    </div>
+    <div class="about">
+      <div>
+        <h3 class="pname">Stella Sweeney</h3>
+        <p class="sub">Co-founder · Healthcare operator</p>
+      </div>
+      <div class="txt">
+        <p>Stella builds and runs healthcare services. She leads a wound care business and is opening recovery residences in New York, so she knows the day-to-day of staffing, licensing, referrals and keeping a program running.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap"><hr class="thin"></div>
+
+<div class="wrap">
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <p class="ask" id="contact-h">Tell us about your program</p>
+    <!-- EMAIL: set the address below and remove "hidden" from the link and the button -->
+    <a class="addr" id="email" href="mailto:" hidden></a>
+    <div class="row">
+      <button type="button" id="copy" hidden>Copy email address</button>
+      <p>Opening a house, rethinking services or chasing a grant? A few lines about where you are is plenty.</p>
+    </div>
+  </section>
+  <footer><span>Recovery Science LLC</span><span>New York · 2026</span></footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var el=document.getElementById('email'), btn=this;
+  function done(m){btn.textContent=m;setTimeout(function(){btn.textContent='Copy email address'},1800)}
+  function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);done('Selected. Press copy.')}
+  try{navigator.clipboard.writeText(el.textContent).then(function(){done('Copied')},fallback)}catch(e){fallback()}
+});
+</script>
+</body>
+</html>
